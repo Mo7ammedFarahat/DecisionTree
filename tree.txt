@@ -1,0 +1,61 @@
+|--- NeuroCOVID <= 0.50
+|   |--- ClinicalMetagenomics <= 0.50
+|   |   |--- Immunosupressed <= 0.50
+|   |   |   |--- class: Infectious
+|   |   |--- Immunosupressed >  0.50
+|   |   |   |--- Top10 <= 1.50
+|   |   |   |   |--- class: Infectious
+|   |   |   |--- Top10 >  1.50
+|   |   |   |   |--- Presentation <= 2.50
+|   |   |   |   |   |--- class: Non-infectious
+|   |   |   |   |--- Presentation >  2.50
+|   |   |   |   |   |--- Presentation <= 5.50
+|   |   |   |   |   |   |--- class: Unknown
+|   |   |   |   |   |--- Presentation >  5.50
+|   |   |   |   |   |   |--- class: Non-infectious
+|   |--- ClinicalMetagenomics >  0.50
+|   |   |--- Presentation <= 2.50
+|   |   |   |--- Top10 <= 2.50
+|   |   |   |   |--- class: Infectious
+|   |   |   |--- Top10 >  2.50
+|   |   |   |   |--- ClinicalMetagenomics <= 1.50
+|   |   |   |   |   |--- Immunosupressed <= 1.50
+|   |   |   |   |   |   |--- Presentation <= 1.50
+|   |   |   |   |   |   |   |--- class: Unknown
+|   |   |   |   |   |   |--- Presentation >  1.50
+|   |   |   |   |   |   |   |--- class: Infectious
+|   |   |   |   |   |--- Immunosupressed >  1.50
+|   |   |   |   |   |   |--- class: Infectious
+|   |   |   |   |--- ClinicalMetagenomics >  1.50
+|   |   |   |   |   |--- class: Unknown
+|   |   |--- Presentation >  2.50
+|   |   |   |--- Presentation <= 5.00
+|   |   |   |   |--- class: Unknown
+|   |   |   |--- Presentation >  5.00
+|   |   |   |   |--- class: Infectious
+|--- NeuroCOVID >  0.50
+|   |--- Presentation <= 1.50
+|   |   |--- CellCount <= 0.50
+|   |   |   |--- Top10 <= 2.50
+|   |   |   |   |--- class: COVID-19 
+|   |   |   |--- Top10 >  2.50
+|   |   |   |   |--- Immunosupressed <= 0.50
+|   |   |   |   |   |--- Age <= 0.50
+|   |   |   |   |   |   |--- class: Unknown
+|   |   |   |   |   |--- Age >  0.50
+|   |   |   |   |   |   |--- class: COVID-19 
+|   |   |   |   |--- Immunosupressed >  0.50
+|   |   |   |   |   |--- class: COVID-19 
+|   |   |--- CellCount >  0.50
+|   |   |   |--- ClinicalMetagenomics <= 1.00
+|   |   |   |   |--- class: COVID-19 
+|   |   |   |--- ClinicalMetagenomics >  1.00
+|   |   |   |   |--- class: Unknown
+|   |--- Presentation >  1.50
+|   |   |--- Presentation <= 3.00
+|   |   |   |--- Immunosupressed <= 0.50
+|   |   |   |   |--- class: Non-infectious
+|   |   |   |--- Immunosupressed >  0.50
+|   |   |   |   |--- class: COVID-19 
+|   |   |--- Presentation >  3.00
+|   |   |   |--- class: Unknown
